@@ -1,0 +1,37 @@
+#include "mainwindow.h"
+#include "ui_mainwindow.h"
+
+MainWindow::MainWindow(QWidget *parent) :
+    QMainWindow(parent),
+    ui(new Ui::MainWindow)
+{
+    ui->setupUi(this);
+
+    //主场景配置
+
+    //固定背景大小
+    setFixedSize(320,588);
+
+    //设置图标
+    setWindowIcon(QIcon(":/res/Coin0001.png"));
+
+    setWindowTitle("翻金币_v1.0");
+
+    //点击开始，退出游戏
+    connect(ui->actionquit,&QAction::triggered,[=](){
+        this->close();
+    });
+
+
+}
+
+//重新paintEvent事件 画背景图
+void MainWindow:paintEvent(QPaintEvent *)
+{
+    Qp
+}
+
+MainWindow::~MainWindow()
+{
+    delete ui;
+}
